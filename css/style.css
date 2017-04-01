@@ -1,0 +1,59 @@
+
+
+canvas {
+    background-image: url("../img/azeroth.jpg");
+    width: 7545px;
+    height: 5055px;
+    overflow: scroll;
+}
+
+.free {
+  position: absolute;
+}
+
+p {
+  font-size: 100px;
+}
+
+.special {
+color: white;
+font-size: 500%;
+}
+
+.tooltip {
+    text-decoration:none;
+    position:relative;
+}
+.tooltip span {
+    display:none;
+}
+.tooltip:hover span {
+    display:block;
+    position:fixed;
+    overflow:hidden;
+}
+
+/* Tooltips */
+.tt {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tt .ttt {
+    visibility: hidden;
+    width: 500px;
+    background: rgba(10, 10, 10, 0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 0px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tt:hover .ttt {
+    visibility: visible;
+}
