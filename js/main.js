@@ -14,14 +14,16 @@ function saveCoords(event) {
     var y = event.pageY;
     var longCoords = "X: "+x+" and Y: "+y;
     document.getElementById("coordinatesLink").innerHTML = longCoords;
-
-    // document.getElementById("inputName").value = name;
     document.getElementById("inputX").value = x;
     document.getElementById("inputY").value = y;
     document.getElementById("addLocation").submit();
 }
 
-
+function deleteLocation(id) {
+  var locationId = id;
+  document.getElementById("inputId").value = locationId;
+  document.getElementById("deleteLocation").submit();
+}
 
 function trackCoords(event) {
     var x = event.pageX;
@@ -39,15 +41,16 @@ var ctx = canvas.getContext("2d");
 ctx.lineWidth=3;
 
 
+
 /* GRID */
-for (i=0; i<40; i++) {
-  var luku = i * 200;
+for (i=0; i<20; i++) {
+  var luku = i * 400;
   ctx.moveTo(luku,0);
   ctx.lineTo(luku,5000);
   ctx.stroke();
 }
-for (i=0; i<100; i++) {
-  var luku = i * 200;
+for (i=0; i<50; i++) {
+  var luku = i * 400;
   ctx.moveTo(0, luku);
   ctx.lineTo(7000, luku);
   ctx.stroke();
