@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     echo "<div class='tt' id='".$row["id"]."' style='position: absolute; left: ".($row['xCoord']-38)."px; top: ".($row['yCoord']-38)."px;'>";
     echo "<img src='img/hs_icon.png' alt='card' width='75' height='75' class='free'>";
-    echo "<span class='ttt'>".$row['name']."<br>";
+    echo "<span class='ttt'>".$row['name']." (id=".$row["id"].")<br>";
     $locationId = $row['id'];
     $query2 = "SELECT * FROM cards WHERE locationId = $locationId";
     $result2 = $conn->query($query2);
@@ -53,6 +53,7 @@ if ($result->num_rows > 0) {
         echo "<img src='".$row2['imageLink']."' alt='card' width='144' height='200'>";
       }
     }
+    echo "<button style='position: absolute; left: 425px; top: 190px;'>Add New Card</button>";
     echo "<img src='img/delete.png' alt='delete' width='50' height='50' onclick='deleteLocation(".$locationId.")' style='position: absolute; left: 450px; top: 0px;'>";
     echo "</span></div>";
   }
